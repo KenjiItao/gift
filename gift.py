@@ -660,7 +660,7 @@ for num_families in [30, 100, 300]:
     for exchange in [[1, 3, 10, 30, 100][int(sys.argv[1]) % 5]]:
         for interest in [[1.1, 1.2, 1.5, 2.0, 3.0][int(sys.argv[1]) // 5 % 5]]:
             df_res = pd.DataFrame(index = ["exchange", "decay", "exploration",  "eta", "feedback", "epsilon", "mutation", "interest", "num_families", "distribution", "population_ratio", "hierarchy", "cluster_index", "corrcoef", "gini", "core", "independent_duration", "subordinate_duration", "rich_duration", "assortativity", "modularity", "num community", "exp1", "exp2", "exp3"])
-            eta = eta_ / num_families
+            eta = eta_ / 100
             path = f"dist{distribution}_birth{birth}_{num_families}fam_{exchange}exchange_d{round(decay * 100)}pc_ex{round(exploration * 100)}pc_eta{round(eta_ * 100)}pc_f{round(feedback * 100)}pc_epsilon{round(epsilon * 100000)}pm_mu{round(mutation * 1000)}pm_interest{round(interest * 10)}pd"
             for trial in range(30):
                 try:
